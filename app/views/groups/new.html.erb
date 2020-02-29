@@ -1,10 +1,12 @@
-<div class = "content__title">
-  下記の内容を記載して部署登録してください。
-</div>
-<%= form_with model: @group, class: :form, local: true do |form| %>
-  <div class= "input">
-    <span>担当部署</span>
-    <%= form.text_field :name, placeholder: :担当部署入力, class: :form__title %>
+<div class = "content">
+  <div class = "content__title">
+    下記の内容を記載して部署登録してください。
   </div>
-  <%= form.submit 'データ送信', class: :form__btn %>
-<% end %>
+  <%= form_with model: @group, class: :form, local: true do |form| %>
+    <div class= "input">
+      <span>担当部署</span>
+      <%= form.text_field :name, placeholder: :担当部署入力, class: :form__title %>
+    </div>
+    <%= form.submit 'データ送信', class: :form__btn %>
+  <% end %>
+</div>

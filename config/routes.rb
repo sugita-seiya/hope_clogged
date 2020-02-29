@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-
   devise_for :installs
   get 'attendances/index'
   root to: "top#index"
