@@ -1,16 +1,18 @@
-<div class="content__title">
-  記事の詳細
-</div>
-<div class="postManage">
-  <%= link_to "編集", edit_report_path(@report.id), class: "postManage__edit" %>
-  <%= link_to "削除", report_path, method: :delete, class: "postManage__delete" %>
-</div>
-
-<div class= "form">
-  <div class= "form__title">
-    <%= @report.date %>
+<div class = "content">
+  <div class="content__title">
+    記事の詳細
   </div>
-  <div class= "form__text">
-    <%= @report.text %>
+  <div class="postManage">
+    <%= link_to "編集", edit_report_path(@report.id), class: "postManage__edit" %>
+    <%= link_to "削除", report_path, method: :delete, class: "postManage__delete" %>
+  </div>
+
+  <div class= "form">
+    <div class= "form__title">
+      <%= @report.date %>
+    </div>
+    <div class= "form__text">
+      <%= @report.text %>
+    </div>
   </div>
 </div>
