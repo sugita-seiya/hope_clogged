@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :installs
   get 'attendances/index'
+  get 'attendances/edit'
   root to: "top#index"
   devise_for :users
   resources :reports do
