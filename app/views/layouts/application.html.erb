@@ -4,7 +4,6 @@
     <title>HopeClogged</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,7 +16,7 @@
             <%= link_to "TOP", root_path%>
           </div>
           <div class= "header__title">
-            <%= link_to "2019/10/10 friday", root_path %>
+            <%= Date.today %>
           </div>
           <div class= "header__user">
             <%= link_to "公務課", new_group_path %>
