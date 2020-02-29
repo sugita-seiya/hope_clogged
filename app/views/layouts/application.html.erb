@@ -11,14 +11,20 @@
 
   <body>
     <header>
-      <div class="header">
-        <div class= "header__title">
-          2019/10/10 friday
+      <div class= "bolk">
+        <div class="header">
+          <div class= "header__top">
+            <%= link_to "TOP", root_path%>
+          </div>
+          <div class= "header__title">
+            <%= link_to "2019/10/10 friday", root_path %>
+          </div>
+          <div class= "header__user">
+            <%= link_to "公務課", new_group_path %>
+          </div>
         </div>
       </div>
     </header>
-    <div class="main">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>

@@ -1,14 +1,3 @@
-<div class="top">
-  <div class="top__contents">
-    <div class = "top__contents--btn">
-      <%= link_to new_report_path, class:"link__btn" do%>
-        新規作成
-      <% end%>
-    </div>
-    <div class = "top__contents--btn">
-      <%= link_to "#", class:"link__btn" do%>
-        過去履歴
-      <% end%>
-    </div>
-  </div>
-</div>
+<% @reports.each do |report| %>
+  <%= render partial: "report", locals: { report: report } %>
+<% end %>

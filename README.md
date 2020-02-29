@@ -18,8 +18,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string||
+|date|string|null: false|
 |text|text|null: false|
-|date|text|null: false|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many  :groups
