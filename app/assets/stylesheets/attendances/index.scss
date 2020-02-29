@@ -1,0 +1,21 @@
+.title{
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+.list{
+  display: flex;
+  justify-content: center;
+  &__headers{
+    border-bottom: 1px solid #EEEEEE;
+    &__header{
+      text-align: center;
+    }
+  }
+  &__contents{
+    border-bottom: 1px solid #EEEEEE;
+    &__performance{
+      padding: 10px 15px;
+    }
+  }
+}
