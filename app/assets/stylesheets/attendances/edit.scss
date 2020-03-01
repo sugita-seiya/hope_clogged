@@ -1,0 +1,45 @@
+.contents{
+  background-color: white;
+  margin: 50px 180px;
+  padding-bottom: 50px;
+  &__today{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 30px;
+  }
+  &__btn-list{
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 100px 50px 100px;
+    &__work-start{
+      height: 30px;
+      width: 60px;
+      border-radius: 5px;
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+    }
+    &__work-end{
+      height: 30px;
+      width: 60px;
+      border-radius: 5px;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+    }
+    &__push-time-now{
+      text-align: center;
+      padding-top: 10px;
+    }
+  }
+  &__remarks-area{
+    display: flex;
+    justify-content: center;
+    &__remarks{
+      height: 60px;
+      width: 60%;
+      resize: none;
+      border-radius: 5px;
+    }
+  }
+}
