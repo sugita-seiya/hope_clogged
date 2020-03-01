@@ -17,9 +17,11 @@ class AttendancesController < ApplicationController
     today_attendance = Attendance.find(params[:id])
     if params[:commit] == '出勤' then
       today_attendance.work_start = @now
+      today_attendance.remarks = params[:attendance][:remarks]
       today_attendance.save
     elsif params[:commit] == '退勤' then
       today_attendance.work_end = @now
+      today_attendance.remarks = params[:attendance][:remarks]
       today_attendance.save
     end
     redirect_to action: :edit
