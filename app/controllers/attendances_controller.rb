@@ -10,9 +10,6 @@ class AttendancesController < ApplicationController
   end
 
   def update
-    # 時間のデータが存在する場合はdisabled
-    # 出勤時間がなければ退勤を押せない
-    # 過去日のものは変更できない
     @now = Time.new
     today_attendance = Attendance.find(params[:id])
     if params[:commit] == '出勤' then
