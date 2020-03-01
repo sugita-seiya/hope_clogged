@@ -9,5 +9,6 @@ Rails.application.routes.draw do
       get 'top'
     end
   end
+  resources :attendances, only: [:index,:edit,:update]
   resources :groups, only: [:new,:create]
 end
