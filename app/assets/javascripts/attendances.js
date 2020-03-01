@@ -1,4 +1,4 @@
-window.onload = function disabled_control(){
+document.addEventListener('turbolinks:load', function(){
   var work_start = window.document.getElementById('work_start__hours').textContent;
   var work_end = window.document.getElementById('work_end__hours').textContent;
   //出勤時間が入力済みの場合submitボタンをdisabledにする
@@ -9,4 +9,4 @@ window.onload = function disabled_control(){
   if(!work_end == "" || work_start == ""){
     window.document.getElementById('work_end__btn').disabled = true;
   }
-}
+})
