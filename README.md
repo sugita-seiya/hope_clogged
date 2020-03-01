@@ -5,7 +5,6 @@
 |username|string|null: false|
 ### Association
 - belongs_to  :group
-- belongs_to  :roster
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -13,6 +12,7 @@
 |name|string|null: false|
 ### Association
 - belongs_to  :user
+- has_many  :reports
 
 ## reportsテーブル
 |Column|Type|Options|
@@ -22,7 +22,7 @@
 |text|text|null: false|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many  :groups
+- belongs_to  :group
 
 <!-- ## work_timeテーブル
 |Column|Type|Options|

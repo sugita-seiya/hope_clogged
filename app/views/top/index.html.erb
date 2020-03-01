@@ -16,7 +16,9 @@
   <div class= "side">
     <div class= "side__login">
       <% if user_signed_in? %>
-        <%= link_to current_user.nickname, class: "header__right--btn" %>
+        <div class = "header__right--btn">
+          <%= current_user.nickname%>
+        </div>
         <%= link_to  new_report_path, class:"header__right--btn" do%>
           <i class="fas fa-quidditch "></i>日報作成
         <%end%>
