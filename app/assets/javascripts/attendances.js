@@ -4,7 +4,7 @@ window.onload = function disabled_control(){
   if(!work_start == ""){
     window.document.getElementById('work_start__btn').disabled = true;
   }
-  if(!work_end == ""){
+  if(!work_end == "" || work_start == ""){
     window.document.getElementById('work_end__btn').disabled = true;
   }
 }
