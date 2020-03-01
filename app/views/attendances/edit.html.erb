@@ -5,12 +5,12 @@
   <%= form_with model: @today_attendance do |f| %>
     <div class="contents__btn_list">
       <div>
-        <%= f.submit "出勤", class: :contents__btn_list__work_start %>
-        <p class="contents__btn_list__push_time_now"><%= @today_attendance.work_start.in_time_zone('Tokyo').strftime("%H:%M") %></p>
+        <%= f.submit "出勤", class: :contents__btn_list__work_start, id: :work_start__btn %>
+        <p id="work_start__hours" class="contents__btn_list__push_time_now"><%= @today_attendance.work_start.in_time_zone('Tokyo').strftime("%H:%M") %></p>
       </div>
       <div>
-        <%= f.submit "退勤", class: :contents__btn_list__work_end %>
-        <p class="contents__btn_list__push_time_now"><%= @today_attendance.work_end.in_time_zone('Tokyo').strftime("%H:%M") %></p>
+        <%= f.submit "退勤", class: :contents__btn_list__work_end, id: :work_end__btn %>
+        <p id="work_end__hours" class="contents__btn_list__push_time_now"><%= @today_attendance.work_end.in_time_zone('Tokyo').strftime("%H:%M") %></p>
       </div>
     </div>
     <div class="contents__remarks_area">
