@@ -1,18 +1,20 @@
 <div class="contents">
-  <div class="contents__today">
-    2020年2月23日
+  <div id="contents__today" class="contents__today">
+    <%= @today_attendance.days.strftime("%Y年%m月%d日") %>
   </div>
-  <div class="contents__btn-list">
-    <div>
-      <button class="contents__btn-list__work-start">出勤</button>
-      <p class="contents__btn-list__push-time-now">11:00</p>
+  <%= form_with model: @today_attendance do |f| %>
+    <div class="contents__btn_list">
+      <div>
+        <%= f.submit "出勤", class: :contents__btn_list__work_start, id: :work_start__btn %>
+        <p id="work_start__hours" class="contents__btn_list__push_time_now"><%= @today_attendance_work_start %></p>
+      </div>
+      <div>
+        <%= f.submit "退勤", class: :contents__btn_list__work_end, id: :work_end__btn %>
+        <p id="work_end__hours" class="contents__btn_list__push_time_now"><%= @today_attendance_work_end %></p>
+      </div>
     </div>
-    <div>
-      <button class="contents__btn-list__work-end">退勤</button>
-      <p class="contents__btn-list__push-time-now">19:00</p>
+    <div class="contents__remarks_area">
+      <%= f.text_area :remarks, class: :contents__remarks_area__remarks %>
     </div>
-  </div>
-  <div class="contents__remarks-area">
-    <textarea class="contents__remarks-area__remarks" placeholder="備考"></textarea>
-  </div>
+  <% end %>
 </div>
