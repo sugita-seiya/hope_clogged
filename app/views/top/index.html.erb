@@ -17,13 +17,14 @@
     <div class= "side__login">
       <% if user_signed_in? %>
         <div class = "header__right--btn">
-          <%= current_user.nickname%>
+          <%= current_user.name%>さんのページ
         </div>
         <%= link_to  new_report_path, class:"header__right--btn" do%>
           <i class="fas fa-quidditch "></i>日報作成
         <%end%>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__right--btn"%>
       <% else %>
+        <%= link_to "ユーザー登録してください。", new_report_path,class: "header__right--btn" %>
         <%= link_to "ログイン", new_user_session_path, class: "header__right--btn"%>
         <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>
       <%end%>

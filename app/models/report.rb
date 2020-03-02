@@ -1,5 +1,6 @@
 class Report < ApplicationRecord
-  validates :date, :text, presence: true
+  belongs_to :group
+  belongs_to :user
 
-  belongs_to  :group
+  validates :date, :text, presence: true
 end
