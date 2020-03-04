@@ -7,11 +7,11 @@
     text-align: center;
     font-size: 30px;
   }
-  &__btn-list{
+  &__btn_list{
     display: flex;
     justify-content: space-around;
     padding: 100px 100px 50px 100px;
-    &__work-start{
+    &__work_start{
       height: 30px;
       width: 60px;
       border-radius: 5px;
@@ -19,7 +19,7 @@
       color: white;
       cursor: pointer;
     }
-    &__work-end{
+    &__work_end{
       height: 30px;
       width: 60px;
       border-radius: 5px;
@@ -27,12 +27,12 @@
       color: white;
       cursor: pointer;
     }
-    &__push-time-now{
+    &__push_time_now{
       text-align: center;
       padding-top: 10px;
     }
   }
-  &__remarks-area{
+  &__remarks_area{
     display: flex;
     justify-content: center;
     &__remarks{
