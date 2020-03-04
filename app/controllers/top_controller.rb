@@ -1,7 +1,11 @@
 class TopController < ApplicationController
-
+  before_action :set_group
+  
   def index
-    @group = Group.new
   end
 
+  private
+  def set_group
+    @group = Group.find_by(params[:group_id])
+  end
 end

@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_group
+  
   def top
   end
 
@@ -50,7 +51,7 @@ class ReportsController < ApplicationController
   end
 
   def set_group
-    @group = Group.find(params[:group_id])
+    @group = Group.find_by(params[:group_id])
   end
 
 end

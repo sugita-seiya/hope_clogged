@@ -19,7 +19,12 @@
             <%= Date.today %>
           </div>
           <div class= "header__user">
-            <%= link_to "所属部署が登録されていません", new_group_path %>
+            <% if user_signed_in? && current_user.id == @group.id%>
+              部署: <%= @group.name do%>
+              <%end%>
+            <% else %>
+              <%= link_to "所属部署が登録されていません", new_group_path %>
+            <%end%>
           </div>
         </div>
       </div>

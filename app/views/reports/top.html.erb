@@ -17,7 +17,7 @@
     <div class= "side__login">
       <% if user_signed_in? %>
         <div class = "header__right--btn">
-          <%= current_user.nickname%>さんのページ
+          <%= current_user.name%>さんのページ
         </div>
         <%= link_to  new_report_path, class:"header__right--btn" do%>
           <i class="fas fa-quidditch "></i>日報作成
