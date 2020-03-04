@@ -1,13 +1,11 @@
 class TopController < ApplicationController
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :set_group
+  
   def index
   end
 
-
-  
-  protected
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+  private
+  def set_group
+    @group = Group.find_by(params[:group_id])
   end
 end
