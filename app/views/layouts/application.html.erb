@@ -19,7 +19,7 @@
             <%= Date.today %>
           </div>
           <div class= "header__user">
-            <% if user_signed_in? && current_user.id == @group.id%>
+            <% if @group.name? %>
               部署: <%= @group.name do%>
               <%end%>
             <% else %>
