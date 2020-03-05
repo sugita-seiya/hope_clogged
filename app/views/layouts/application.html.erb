@@ -19,11 +19,11 @@
             <%= Date.today %>
           </div>
           <div class= "header__user">
-            <% if user_signed_in? && current_user.id == @group.id%>
+            <% if @group.name? %>
               部署: <%= @group.name do%>
               <%end%>
             <% else %>
-              <%= link_to "所属部署が登録されていません", new_group_path %>
+              <%= link_to "部署登録する", new_group_path %>
             <%end%>
           </div>
         </div>

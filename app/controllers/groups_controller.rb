@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
+  before_action :set_group
 
   def index
+    @reports = Report.new
+    @reports = @group.users.includes(:user)
   end
 
 
@@ -18,11 +21,19 @@ class GroupsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
 
   private
   def group_params
-     params.require(:group).permit(:name, { :user_id => [] })
+    params.require(:group).permit(:name, { :user_ids => [] })
     #  params.require(:group).permit(:name, user_ids: [] )
   end
+
+  def set_group
+    @group = Group.find_by(params[:id])
+  end
+
 
 end
