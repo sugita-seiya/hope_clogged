@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   def update
     group = Group.find_by(params[:id])
     group.update(group_params)
-    redirect_to reports_path(group.id)
+    redirect_to top_group_reports_path(group.id)
   end
 
   def destroy
