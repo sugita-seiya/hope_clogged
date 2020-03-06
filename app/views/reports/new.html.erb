@@ -4,7 +4,7 @@
       新規記事の作成
     </div>
 
-    <%= form_with model: @report, class: :form, local: true do |form| %>
+    <%= form_with(model:[@group,@report],class: :form, local: true) do |form| %>
       <%= form.text_field :date, placeholder: :日付, class: :form__title %>
       <%= form.text_area :text, placeholder: :日報記事内容, class: :form__text , content__titles: "10", id: "content" %>
       <%= form.submit '記事送信', class: :form__btn %>

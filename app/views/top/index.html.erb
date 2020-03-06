@@ -2,7 +2,7 @@
   <div class="top">
     <div class="top__contents">
       <div class = "top__contents--btn">
-        <%= link_to top_reports_path(@group), class:"link__btn" do%>
+        <%= link_to top_group_reports_path(@group), class:"link__btn" do%>
           日報
         <% end%>
       </div>
@@ -13,23 +13,5 @@
       </div>
     </div>
   </div>
-  <div class= "side">
-    <div class= "side__login">
-      <% if user_signed_in? %>
-        <div class = "header__right--btn">
-          <%= current_user.name%>さんのページ
-        </div>
-        <%= link_to  new_report_path, class:"header__right--btn" do%>
-          <i class="fas fa-quidditch "></i>日報作成
-        <%end%>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__right--btn"%>
-      <% else %>
-        <%= link_to "ユーザー登録してください。", new_report_path,class: "header__right--btn" %>
-        <%= link_to "ログイン", new_user_session_path, class: "header__right--btn"%>
-        <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>
-      <%end%>
-    </div>
-  </div>
+ <%= render partial: "side" %>
 </div>
-
-  <%# <%= render partial: "side" %>

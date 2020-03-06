@@ -1,13 +1,23 @@
-<div class="content">
-  <div class="content__title">
-    部署変更
+<div class = "content">
+  <div class = "content__title">
+    下記の内容を記載して部署登録してください。
   </div>
-
-
-
-  <%= form_with model: @report, class: :form, local: true do |form| %>
-    <%= form.text_field :date, placeholder: :日付, class: :form__title %>
-    <%= form.text_area :text, placeholder: :日報記事内容, class: :form__text , content__titles: "10", id: "content" %>
-    <%= form.submit '記事送信', class: :form__btn %>
+  <%= form_with model: @group, class: :form__group, local: true do |form| %>
+    <div class= "form__group--tag">
+      <div class= "form__group--name">
+        <div class = "input">
+          <p>所属メンバー :</p>
+        </div>
+        <div class= "input__group">
+          <input name= "group[user_ids][]" type="hidden" value=<%= current_user.id%> style="user-select: auto;">
+          <p class="chat-group-user__name" style="user-select: auto;"> <%= current_user.name %></p>
+        </div>
+      </div>
+      <div class= "input">
+        <span>担当部署 :</span>
+        <%= form.text_field :name, placeholder: :担当部署入力, class: :group__register %>
+      </div>
+    </div>
+    <%= form.submit 'データ送信', class: :form__btn %>
   <% end %>
 </div>

@@ -1,15 +1,5 @@
 <div class="content">
-  <div class = "reports">
-    <div class="reports__left">
-     工務課
-    </div>
-    <div class="reports__right">
-      <div class="reports__right__top">
-        編集
-      </div>
-      <div class="reports__right__name">
-        削除
-      </div>
-    </div>
-  </div>
+  <% @groups.each do |group| %>
+    <%= render partial: "group", locals: { group: group } %>
+  <% end %>
 </div>
