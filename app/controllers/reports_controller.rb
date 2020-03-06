@@ -2,6 +2,7 @@ class ReportsController < ApplicationController
   before_action :set_group
   
   def top
+    # @report = Report.new
   end
 
   # 過去履歴
@@ -17,7 +18,7 @@ class ReportsController < ApplicationController
   def create
     @report = @group.reports.new(report_params)
     if @report.save
-    redirect_to reports_path(@report), notice: 'メッセージが送信されました'
+      redirect_to group_reports_path, notice: 'メッセージが送信されました'
     else
       @reports = @group.reports.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
@@ -26,7 +27,7 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    @report = Report.find_by(params[:id])
   end
 
   def edit

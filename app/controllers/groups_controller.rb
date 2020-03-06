@@ -2,10 +2,8 @@ class GroupsController < ApplicationController
   before_action :set_group
 
   def index
-    @reports = Report.new
-    @reports = @group.users.includes(:user)
+    @groups = Group.all
   end
-
 
   def new
     @group = Group.new
@@ -22,6 +20,22 @@ class GroupsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    group = Group.find_by(params[:id])
+    group.update(group_params)
+    redirect_to reports_path(group.id)
+  end
+
+  def destroy
+    group= Group.find_by(group_params)
+    group.destroy
+    redirect_to groups_path
+  end
+
+  def show
+    # @report = Report.find(params[:id])
   end
 
 
