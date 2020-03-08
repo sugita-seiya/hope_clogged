@@ -3,18 +3,23 @@ class AttendancesController < ApplicationController
   def index
     #当月のレコードを検索
     if params[:search] == "次月" then
-      # if params[:month] == 12 then
-      #   @year = params[:year] + 1
-      #   nextMonth = 1
-      #   @month = nextMonth
-      # end
       @year = params[:year]
       @month = (params[:month].to_i) + 1
       @attendance_list = Attendance.where(year:params[:year],month:@month)
+      if params[:month] == "12" then
+        @year = (params[:year].to_i) + 1
+        @month = 1
+        @attendance_list = Attendance.where(year:@year,month:@month)
+      end
     elsif params[:search] == "前月" then
       @year = params[:year]
       @month = (params[:month].to_i) - 1
       @attendance_list = Attendance.where(year:params[:year],month:@month)
+      if params[:month] == "1" then 
+        @year = (params[:year].to_i) - 1
+        @month = 12
+        @attendance_list = Attendance.where(year:@year,month:@month)
+      end
     else
       today = Date.today
       @year = today.year
