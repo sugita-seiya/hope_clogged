@@ -1,22 +1,29 @@
  <div class= "side">
     <div class= "side__login">
-      <% if user_signed_in? %>
+      <%if user_signed_in? && current_user.groups.length > 0 %>
         <div class = "header__right--btn login__name">
           <%= current_user.name%>さんのページ <br>
-          <%  @group.each do |g|%>
-            busyo: <%=g.name%>
-          <%end%>
+              <%  current_user.groups.each do |g|%>
+                部署: <%=g.name%>
+              <%end%>
         </div>
-        <%= link_to  top_group_reports_path(@group.ids), class:"header__right--btn" do%>
+        <%= link_to  new_group_report_path(@group), class:"header__right--btn" do%>
           <i class="fas fa-quidditch "></i>日報作成
         <%end%>
-        <%= link_to "所属部署変更", edit_group_path(@group), method: :get, class:"header__right--btn"%>
         <%= link_to "勤務表入力", destroy_user_session_path, method: :delete, class:"header__right--btn"%>
+        <%= link_to "所属部署変更", edit_group_path(@group), method: :get, class:"header__right--btn"%>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__right--btn"%>
+      <% elsif user_signed_in? && current_user.groups.length == 0 %>
+        <div class = "header__right--btn login__name">
+          <%= current_user.name%>さんのページ <br>
+          <p>下記から部署を登録してください</p>
+          <p>↓↓↓</p>
+          <%= link_to "部署登録", new_group_path %>
+        </div>
       <% else %>
-        <%= link_to "ユーザー登録してください。", new_report_path,class: "header__right--btn" %>
-        <%= link_to "ログイン", new_user_session_path, class: "header__right--btn"%>
         <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>
+        <p>or</p>
+        <%= link_to "ログイン", new_user_session_path, class: "header__right--btn"%>
       <%end%>
     </div>
   </div>

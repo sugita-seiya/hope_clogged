@@ -19,16 +19,14 @@
             <%= Date.today %>
           </div>
           <div class= "header__user">
-            <%if user_signed_in?%>
-                <% if @group.length > 0 %>
-                  <% @group.each do |g|%>
-                    busyo: <%=g.name%>
-                  <%end%>
-                <%else%>
-                  <p>syozokubusyonasi</p>
-                <%end%>
+            <%if user_signed_in? && current_user.groups.length > 0 %>
+              <% current_user.groups.each do |g|%>
+                部署: <%=g.name%>
+              <%end%>
+            <% elsif user_signed_in? && current_user.groups.length == 0 %>
+              <p>部署を登録してください。</p>
             <% else %>
-              <%= link_to "部署登録する", new_group_path %>
+              <%= link_to "ユーザー登録してください。", new_user_session_path %>
             <%end%>
           </div>
         </div>
