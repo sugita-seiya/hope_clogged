@@ -52,7 +52,7 @@ class ReportsController < ApplicationController
   end
 
   def set_group
-    @group = Group.find_by(params[:group_id])
+    @group = Group.find_by(params[:group_ids])
   end
 
 end

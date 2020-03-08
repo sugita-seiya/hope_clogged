@@ -20,9 +20,13 @@
           </div>
           <div class= "header__user">
             <%if user_signed_in?%>
-            <%# <% if @group.name? %>
-              部署: <%= @group.name do%>
-              <%end%>
+                <% if @group.length > 0 %>
+                  <% @group.each do |g|%>
+                    busyo: <%=g.name%>
+                  <%end%>
+                <%else%>
+                  <p>syozokubusyonasi</p>
+                <%end%>
             <% else %>
               <%= link_to "部署登録する", new_group_path %>
             <%end%>
