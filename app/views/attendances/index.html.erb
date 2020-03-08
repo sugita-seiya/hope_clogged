@@ -16,3 +16,11 @@
     </tr>
   <% end %>
 </table>
+<%= form_tag(attendances_path,:method => 'get') do %>
+  <%= hidden_field_tag 'year', "#{@year}"%>
+  <%= hidden_field_tag 'month', "#{@month}"%>
+  <div class="btn_field" style="display:flex;justify-content:space-around;padding:30px 0 60px;">
+    <%= submit_tag '前月', name: "search", style: "width:60px;" %>
+    <%= submit_tag '次月', name: "search", style: "width:60px;" %>
+  </div>
+<% end %>
