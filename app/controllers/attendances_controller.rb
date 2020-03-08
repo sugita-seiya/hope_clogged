@@ -1,7 +1,6 @@
 class AttendancesController < ApplicationController
   require "date"
   def index
-    #当月のレコードを検索
     if params[:search] == "次月" then
       @year = params[:year]
       @month = (params[:month].to_i) + 1
