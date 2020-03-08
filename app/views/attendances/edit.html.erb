@@ -1,6 +1,6 @@
 <div class="contents">
   <div id="contents__today" class="contents__today">
-    <%= @today_attendance.days.strftime("%Y年%m月%d日") %>
+    <%= @today_attendance.year %>年<%= @today_attendance.month %>月<%= @today_attendance.day %>日
   </div>
   <%= form_with model: @today_attendance do |f| %>
     <div class="contents__btn_list">

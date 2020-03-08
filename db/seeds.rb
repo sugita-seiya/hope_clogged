@@ -18,6 +18,9 @@ thisMonthLastDay = today.end_of_month.mday
   monthly = Date.parse(strMonthly)
   Attendance.create!(
      days: monthly,
+     year: thisYear,
+     month: thisMonth,
+     day: day,
      remarks: '腹痛のため遅刻'
    )
 end
