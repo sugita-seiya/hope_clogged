@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    # 現在ログイン中のユーザーを、新規作成したグループに追加。
     @group.users << current_user
   end
 
