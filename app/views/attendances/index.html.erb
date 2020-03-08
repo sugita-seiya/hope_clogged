@@ -1,4 +1,4 @@
-<div class="title">2020年02月の勤務表</div>
+<div class="title"><%= @year %>年<%= @month %>月の勤務表</div>
 
 <table class="list">
   <tr class="list__headers">
@@ -9,10 +9,18 @@
   </tr>
   <% @attendance_list.each do |attend| %>
     <tr class="list__contents">
-      <td><%= attend.days %></td>
+      <td><%= attend.year %>年<%= attend.month %>月<%= attend.day %>日</td>
       <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
       <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
       <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.remarks %>"></td>
     </tr>
   <% end %>
 </table>
+<%= form_tag(attendances_path,:method => 'get') do %>
+  <%= hidden_field_tag 'year', "#{@year}"%>
+  <%= hidden_field_tag 'month', "#{@month}"%>
+  <div class="btn_field" style="display:flex;justify-content:space-around;padding:30px 0 60px;">
+    <%= submit_tag '前月', name: "search", style: "width:60px;" %>
+    <%= submit_tag '次月', name: "search", style: "width:60px;" %>
+  </div>
+<% end %>

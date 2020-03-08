@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_212211) do
+ActiveRecord::Schema.define(version: 2020_03_08_020118) do
 
   create_table "attendances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "days"
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "day", null: false
     t.timestamp "work_start"
     t.timestamp "work_end"
     t.text "remarks"
