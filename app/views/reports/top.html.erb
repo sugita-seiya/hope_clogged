@@ -7,7 +7,8 @@
         <% end%>
       </div>
       <div class = "top__contents--btn">
-        <%= link_to group_reports_path(@group), class:"link__btn" do%>
+      <%= link_to group_reports_path(current_user.groups.ids), class:"link__btn" do%>
+        <%# <%= link_to group_reports_path(@group), class:"link__btn" do%> 
           過去履歴
         <% end%>
       </div>

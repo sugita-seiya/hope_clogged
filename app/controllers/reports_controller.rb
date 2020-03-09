@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
   # 過去履歴
   def index
     @reports = Report.new
-    @reports = @group.reports.includes(:user).order("created_at desc")
+    @reports = @groups.reports.includes(:user).order("created_at desc")
   end
 
   def new
@@ -19,7 +19,7 @@ class ReportsController < ApplicationController
   def create
     @report = @group.reports.new(report_params)
     if @report.save
-      redirect_to group_reports_path, notice: 'メッセージが送信されました'
+      redirect_to group_reports_path(@report), notice: 'メッセージが送信されました'
     else
       @reports = @group.reports.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'

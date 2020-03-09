@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "top#index"
   get 'attendances/index'
   get 'attendances/edit'
-  devise_for :users
   resources :groups do
     resources :reports do
       collection do
