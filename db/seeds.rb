@@ -17,6 +17,7 @@ thisMonthLastDay = today.end_of_month.mday
   strMonthly = today.year.to_s + "/" + today.month.to_s + "/" + day.to_s
   monthly = Date.parse(strMonthly)
   Attendance.create!(
+     user_id: 1, 
      days: monthly,
      year: thisYear,
      month: thisMonth,

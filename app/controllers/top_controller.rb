@@ -1,12 +1,13 @@
 class TopController < ApplicationController
   before_action :set_group
+  require "date"
   
   def index
-    # @group = User.find(current_user.id).groups
-    # puts @group.length
-    # @group.each do |g|
-    #   puts "group-name:" + g.name
-    # end
+    today = Date.today
+    @year = today.year
+    @month = today.month
+    @day = today.day
+    @attendance = Attendance.where(user_id: current_user.id,year: @year,month: @month,day: @day)
   end
 
   private
