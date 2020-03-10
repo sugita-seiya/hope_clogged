@@ -12,7 +12,10 @@ class TopController < ApplicationController
 
   private
   def set_group
-    @group = Group.find(current_user.groups.ids)
-    # @group = Group.find_by(params[:group_ids])
+    if current_user.groups.ids.blank?
+    else
+      @group = Group.find(current_user.groups.ids)
+      # @group = Group.find_by(params[:group_ids])
+    end
   end
 end

@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
   # 過去履歴
   def index
     @reports = Report.new
-    @reports = @groups.reports.includes(:user).order("created_at desc")
+    @reports = @group.reports.includes(:user).order("created_at desc")
   end
 
   def new

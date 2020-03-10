@@ -1,8 +1,8 @@
  <div class= "side">
     <div class= "side__login">
-      <%if user_signed_in? && current_user.groups.length > 0 %>
+      <% if user_signed_in? && current_user.groups.length > 0 %>
         <div class = "header__right--btn login__name">
-          <%= current_user.name%>さんのページ <br>
+          <%= current_user.name %>さんのページ <br>
               <%  current_user.groups.each do |g|%>
                 部署: <%=g.name%>
               <%end%>
@@ -19,6 +19,7 @@
           <p>下記から部署を登録してください</p>
           <p>↓↓↓</p>
           <%= link_to "部署登録", new_group_path %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__right--btn"%>
         </div>
       <% else %>
         <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>
