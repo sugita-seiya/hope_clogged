@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :groups, through: :group_users
   has_many  :reports
+  has_many :attendances
 
   validates :name, presence: true, length: { maximum: 6 }
 end

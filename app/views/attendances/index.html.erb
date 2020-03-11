@@ -1,4 +1,5 @@
-<div class="title"><%= @year %>年<%= @month %>月の勤務表</div>
+<div class="title"><span id="year"><%= @year %></span>年<span id="month"><%= @month %></span>月の勤務表</div>
+
 <table class="list">
   <tr class="list__headers">
     <th class="list__headers__header">日付</th>
@@ -9,9 +10,15 @@
   <% @attendance_list.each do |attend| %>
     <tr class="list__contents">
       <td><%= attend.year %>年<%= attend.month %>月<%= attend.day %>日</td>
-      <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
-      <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
-      <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.remarks %>"></td>
+      <% if attend.work_start.nil? %>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_end %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.remarks %>"></td>
+      <% else %>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start.in_time_zone('Tokyo').strftime("%H:%M") %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_end.in_time_zone('Tokyo').strftime("%H:%M") %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.remarks %>"></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
@@ -19,7 +26,7 @@
   <%= hidden_field_tag 'year', "#{@year}"%>
   <%= hidden_field_tag 'month', "#{@month}"%>
   <div class="btn_field" style="display:flex;justify-content:space-around;padding:30px 0 60px;">
-    <%= submit_tag '前月', name: "search", style: "width:60px;" %>
-    <%= submit_tag '次月', name: "search", style: "width:60px;" %>
+    <%= submit_tag '前月', name: "search", style: "width:60px;", id: "last" %>
+    <%= submit_tag '次月', name: "search", style: "width:60px;", id: "next" %>
   </div>
 <% end %>
