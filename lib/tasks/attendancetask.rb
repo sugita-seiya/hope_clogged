@@ -3,7 +3,7 @@ require "date"
 
 class Tasks::Attendancetask
   def self.create
-    today = Date.today
+    today = Date.today >> 1
     thisYear = today.year
     thisMonth = today.month
     thisMonthLastDay = today.end_of_month.mday
