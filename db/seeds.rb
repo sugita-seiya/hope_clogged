@@ -12,17 +12,21 @@ thisYear = today.year
 thisMonth = today.month
 thisMonthLastDay = today.end_of_month.mday
 
-#今月の日にち分データを作成
-(1..thisMonthLastDay).each do |day|
-  strMonthly = today.year.to_s + "/" + today.month.to_s + "/" + day.to_s
-  monthly = Date.parse(strMonthly)
-  Attendance.create!(
-     user_id: 1, 
-     days: monthly,
-     year: thisYear,
-     month: thisMonth,
-     day: day,
-     remarks: '腹痛のため遅刻'
-   )
+user_list = User.all
+(1..user_list.length).each do |user|
+  #今月の日にち分データを作成
+  (1..thisMonthLastDay).each do |day|
+    # strMonthly = today.year.to_s + "/" + today.month.to_s + "/" + day.to_s
+    # monthly = Date.parse(strMonthly)
+    Attendance.create!(
+      user_id: user, 
+      # days: monthly,
+      year: thisYear,
+      month: thisMonth,
+      day: day,
+      remarks: ''
+    )
+  end
 end
+
 
