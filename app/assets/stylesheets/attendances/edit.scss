@@ -1,7 +1,12 @@
 .contents{
   background-color: white;
-  margin: 50px 180px;
+  // margin: 50px 180px;
   padding-bottom: 50px;
+  a{
+    background-color: #e0c2c2;
+    padding: 20px;
+    color: black;
+  }
   &__today{
     padding-top: 30px;
     text-align: center;
