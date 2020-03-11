@@ -21,6 +21,6 @@
 set :environment, "production"
 set :output, { :error => "log/cron_error.log" }
 set :path, "/var/www/hope_clogged"
-every 1.minute do
+every 1.month, :at => '0:00' do
   runner 'Tasks::Attendancetask.create'
 end
