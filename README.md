@@ -8,12 +8,12 @@
 
 ## Features
 - 命名規則BEMを使ったマークアップ
-- capistranoによるAWS EC2への自動デプロイ
-- RSpecを使った単体テスト
 - レポートのCRUD機能
 - 所属事務所のCRUD機能
 - 当月勤務表の登録(cron)
 - 本日日付の勤務データの更新
+- capistranoによるAWS EC2への自動デプロイ
+- RSpecを使った単体テスト
 
 ## Requirement
 - Ruby 2.5.1
