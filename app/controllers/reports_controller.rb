@@ -2,7 +2,11 @@ class ReportsController < ApplicationController
   before_action :set_group
   
   def top
-    # @report = Report.new
+    today = Date.today
+    @year = today.year
+    @month = today.month
+    @day = today.day
+    @attendance = Attendance.where(user_id: current_user.id,year: @year,month: @month,day: @day)
   end
 
   # 過去履歴

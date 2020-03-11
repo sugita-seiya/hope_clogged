@@ -9,6 +9,5 @@ class User < ApplicationRecord
   has_many  :reports
   has_many :attendances
 
-
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 6 }
 end
