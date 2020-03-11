@@ -12,17 +12,23 @@
   2つ目
   勤務表の出勤、退勤ボタンを押した時の時間を取得する方法。
 
-
 ## Features
 - 命名規則BEMを使ったマークアップ
-- レポートのCRUD機能
-- 所属事務所のCRUD機能
 - capistranoによるAWS EC2への自動デプロイ
 - RSpecを使った単体テスト
+- レポートのCRUD機能
+- 所属事務所のCRUD機能
+- 当月勤務表の登録(cron)
+- 本日日付の勤務データの更新
 
 ## Requirement
 - Ruby 2.5.1
 - Rails 5.2.4
+- javaScritp
+- git
+- aws
+
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -31,6 +37,7 @@
 - has_many  :groups,  through:  :groups_users
 - has_many  :reports
 - has_many :groups_users
+- has_many :attendances
 
 ## reportsテーブル
 |Column|Type|Options|
@@ -61,6 +68,18 @@
 - belongs_to :group
 - belongs_to :user
 
+## attendancesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|year|integer|null: false|
+|month|integer|null: false|
+|day|integer|null: false|
+|work_start|timestamp||
+|work_end|timestamp||
+|remarks|string||
+### Association
+- belongs_to :user
 
 <!-- ## work_timeテーブル
 |Column|Type|Options|
