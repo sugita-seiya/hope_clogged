@@ -10,9 +10,15 @@
   <% @attendance_list.each do |attend| %>
     <tr class="list__contents">
       <td><%= attend.year %>年<%= attend.month %>月<%= attend.day %>日</td>
-      <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
-      <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
-      <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.remarks %>"></td>
+      <% if attend.work_start.nil? %>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_end %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.remarks %>"></td>
+      <% else %>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_start.in_time_zone('Tokyo').strftime("%H:%M") %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.work_end.in_time_zone('Tokyo').strftime("%H:%M") %>"></td>
+        <td class="list__contents__performance"><input type="text" disabled="disabled" value="<%= attend.remarks %>"></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
