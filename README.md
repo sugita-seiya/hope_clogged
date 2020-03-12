@@ -1,6 +1,9 @@
 # hope_cloggmwed
 - 前職で書類保管による業務の非効率性に問題があったので、改善するアプリを作成。
 - http://18.178.151.218
+- ログインパスワード
+- Email・・・satreu@ezweb.ne.jp
+- password・・・12Abcdef
 
 ## Overview
 - ユーザー登録が出来る。
