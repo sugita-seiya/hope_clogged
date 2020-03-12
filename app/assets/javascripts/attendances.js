@@ -13,7 +13,7 @@ document.addEventListener('turbolinks:load', function(){
     var int_to_month = parseInt(to_month);
   
     if(now_year == int_to_year){
-      if(now_month + 1 == int_to_month){
+      if(now_month + 2 == int_to_month){
         window.document.getElementById('next').disabled = true;
       }
     }
