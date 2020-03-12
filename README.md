@@ -1,20 +1,20 @@
-# hope_cloggmwed
+# hope_cloggmwed(アプリ名)
 - 前職で書類保管による業務の非効率性に問題があったので、改善するアプリを作成。
 - http://18.178.151.218
 
 
-## Test Account
+## Test Account(テストアカウント)
 - Email・・・satreu@ezweb.ne.jp
 - password・・・12Abcdef
 
-## Overview
+## Overview(概要)
 - ユーザー登録が出来る。
 - ユーザーが勤務表を入力する事が出来る。(出社、退社時にボタンを押すと時間を取得する事が出来る。早退等の為に備考欄も有り。)
 - ユーザーが部署に所属、編集する事が出来る。
 - 部署に所属したらレポートを提出する事が出来る。
 - 提出したレポートの一覧を表示。
 
-## Features
+## Features(機能)
 - 命名規則BEMを使ったマークアップ
 - レポートのCRUD機能
 - 所属事務所のCRUD機能
@@ -23,14 +23,14 @@
 - capistranoによるAWS EC2への自動デプロイ
 - RSpecを使った単体テスト
 
-## Requirement
+## technology(使用技術)
 - Ruby 2.5.1
 - Rails 5.2.4
 - javaScritp
 - github
 - AWS
 
-## 苦労した点
+## poin (こだわりポイント)
 - 1つ目  ユーザーと所属事務所の紐付けの仕方。
 - 2つ目  勤務表の出勤、退勤ボタンを押した時の時間を取得する方法。
 
