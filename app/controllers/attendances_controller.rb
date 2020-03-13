@@ -30,7 +30,7 @@ class AttendancesController < ApplicationController
   def edit
     @today = Date.today
     # @today_attendance = Attendance.find_by(days: @today)
-    @today_attendance = Attendance.find_by(year: @today.year,month:@today.month,day:@today.day)
+    @today_attendance = Attendance.find_by(user_id: current_user.id, year: @today.year,month:@today.month,day:@today.day)
     # 出勤・退勤時間が入力されていれば日本時間でformatを行う
     if !@today_attendance.work_start.nil? then
       @today_attendance_work_start = @today_attendance.work_start.in_time_zone('Tokyo').strftime("%H:%M")
