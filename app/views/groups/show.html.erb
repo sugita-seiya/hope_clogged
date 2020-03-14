@@ -1,0 +1,28 @@
+<div class = "content">
+  <div class="content__title">
+    部署の詳細
+  </div>
+  <div class="postManage">
+    <%= link_to "編集", edit_group_path(@group.id), class: "postManage__edit" %>
+    <%= link_to "削除", group_path(@group), method: :delete, class: "postManage__delete", data:{confirm: "削除しますか？"}  %>
+  </div>
+
+  <div class= "form__group">
+    <div class= "form__group--tag">
+      <div class= "form__group--name">
+        <div class = "input">
+          <p>所属メンバー :</p>
+        </div>
+        <div class= "input__group">
+          <input name= "group[user_ids][]" type="hidden" value=<%= current_user.id%> style="user-select: auto;">
+          <p class="chat-group-user__name" style="user-select: auto;"> <%= current_user.name %></p>
+        </div>
+      </div>
+      <div class= "input">
+        <span>担当部署:</span>
+          <%= @group.name%>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

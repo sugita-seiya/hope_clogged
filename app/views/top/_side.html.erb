@@ -12,6 +12,7 @@
         <%end%>
         <%= link_to "勤務表入力", edit_attendance_path(@attendance), method: :delete, class:"header__right--btn"%>
         <%= link_to "所属部署変更", edit_group_path(@group), method: :get, class:"header__right--btn"%>
+        <%= link_to "所属部署一覧", groups_path(@group) %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__right--btn"%>
       <% elsif user_signed_in? && current_user.groups.length == 0 %>
         <div class = "header__right--btn login__name">

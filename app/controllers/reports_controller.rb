@@ -32,7 +32,7 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find_by(params[:id])
+    @report = Report.find(params[:id])
   end
 
   def edit
@@ -42,13 +42,13 @@ class ReportsController < ApplicationController
   def update
     report = Report.find(params[:id])
     report.update(report_params)
-    redirect_to top_group_reports_path(report.id)
+    redirect_to  group_reports_path(current_user.groups.ids)
   end
 
   def destroy
     report = Report.find(params[:id])
     report.destroy
-    redirect_to top_group_reports_path
+    redirect_to group_reports_path(current_user.groups.ids)
   end
 
   private

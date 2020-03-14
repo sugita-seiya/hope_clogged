@@ -1,13 +1,15 @@
 <div class = "reports">
     <div class="reports__left">
-     <%= link_to group.name,class: "content__date"%>
+      <%= link_to group_path(group),class: "content__date" do%>
+        <%= group.name%>
+      <% end %>
     </div>
     <div class="reports__right">
       <div class="reports__right__top">
         <%= link_to "編集", edit_group_path(group.id), class: "postManage__edit" %>
       </div>
       <div class="reports__right__name">
-        <%= link_to "削除",group_path(group.id), method: :delete, class: "postManage__delete" %>
+        <%= link_to "削除",group_path(group.id), method: :delete, class: "postManage__delete" , data:{confirm: "削除しますか？"} %>
       </div>
     </div>
   </div>
