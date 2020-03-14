@@ -67,6 +67,9 @@ body{
         &--btn{
           padding-bottom: 123px;
           height: 30px;
+          .width{
+            // width: 80%;
+          }
           .link__btn{
             width: 100%;
             padding: 34px 29%;
