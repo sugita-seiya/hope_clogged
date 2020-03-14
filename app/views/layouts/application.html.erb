@@ -16,7 +16,7 @@
             <%= link_to "TOP", root_path%>
           </div>
           <div class= "header__title">
-            <%= Date.today %>
+            <%= @year %>年<%= @month %>月<%= @day  %>日  (<%= @week %>)
           </div>
           <div class= "header__user">
             <%if user_signed_in? && current_user.groups.length > 0 %>

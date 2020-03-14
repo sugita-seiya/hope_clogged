@@ -14,7 +14,7 @@ class AttendancesController < ApplicationController
       @year = params[:year]
       @month = (params[:month].to_i) - 1
       @attendance_list = Attendance.where(user_id: current_user.id,year:params[:year],month:@month)
-      if params[:month] == "1" then 
+      if params[:month] == "1" then
         @year = (params[:year].to_i) - 1
         @month = 12
         @attendance_list = Attendance.where(user_id: current_user.id,year:@year,month:@month)
