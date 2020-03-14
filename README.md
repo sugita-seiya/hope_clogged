@@ -13,7 +13,7 @@
 - ユーザーが部署に所属、編集する事が出来る。
 - 部署に所属したらレポートを提出する事が出来る。
 - 提出したレポートの一覧を表示。
-![画面収録-2020-03-14-13 33 12](https://user-images.githubusercontent.com/58096254/76675067-3fcec900-65f9-11ea-9955-b653101ce765.gif)
+![result](https://user-images.githubusercontent.com/58096254/76675454-fda78680-65fc-11ea-8db6-e976726bc230.gif)
 
 ## Features(機能)
 - 命名規則BEMを使ったマークアップ
