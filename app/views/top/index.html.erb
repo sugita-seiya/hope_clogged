@@ -3,28 +3,24 @@
     <div class="top__contents">
       <div class = "top__contents--btn">
         <% if  current_user.groups.ids.blank?%>
-            <%= link_to new_group_path , class:"link__btn" do%>
-              部署登録
-              <% end %>
+          <%= link_to new_group_path , class:"link__btn" do%>
+            部署登録
+          <% end %>
         <% else %>
-            <%= link_to top_group_reports_path(@group), class:"link__btn" do%>
-              日報
-            <% end%>
+          <%= link_to top_group_reports_path(@group), class:"link__btn" do%>
+            日報
+          <% end%>
         <% end %>
       </div>
       <div class = "top__contents--btn">
-        <div class = "width">
-          <%= link_to edit_attendance_path(@attendance), class:"link__btn" do%>
-            勤務表
-          <% end%>
-        </div>
+        <%= link_to edit_attendance_path(@attendance), class:"link__btn" do%>
+          勤務表
+        <% end%>
       </div>
       <div class = "top__contents--btn">
-        <div class = "width">
-          <%= link_to edit_attendance_path(@attendance), class:"link__btn" do%>
-            天気情報
-          <% end%>
-        </div>
+        <%= link_to weather_index_path, class:"link__btn" do%>
+          天気情報
+        <% end%>
       </div>
     </div>
   </div>

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     end
   end
   resources :attendances, only: [:index,:edit,:update]
+  resources :weather, only: :index
 end
