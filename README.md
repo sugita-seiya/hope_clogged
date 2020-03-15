@@ -13,7 +13,9 @@
 - ユーザーが部署に所属、編集する事が出来る。
 - 部署に所属したらレポートを提出する事が出来る。
 - 提出したレポートの一覧を表示。
+- 東京の天気を見る事が出来る。(APIを用いて５日分の天気情報の取得。)
 ![result](https://user-images.githubusercontent.com/58096254/76675454-fda78680-65fc-11ea-8db6-e976726bc230.gif)
+![スクリーンショット 2020-03-15 19 50 54](https://user-images.githubusercontent.com/58096254/76700007-56a71580-66f6-11ea-92ae-260703071126.png)
 
 ## Features(機能)
 - 命名規則BEMを使ったマークアップ
@@ -21,6 +23,7 @@
 - 所属事務所のCRUD機能
 - 当月勤務表の登録(cron)
 - 本日日付の勤務データの更新
+- APIを用いた天気情報の取得
 - capistranoによるAWS EC2への自動デプロイ
 - RSpecを使った単体テスト
 
@@ -28,8 +31,10 @@
 - Ruby 2.5.1
 - Rails 5.2.4
 - javaScritp
+- jQuery
 - github
 - AWS
+
 
 ## poin (こだわりポイント)
 - 1つ目  ユーザーと所属事務所の紐付け方法。
