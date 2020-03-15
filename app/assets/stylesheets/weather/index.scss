@@ -1,0 +1,17 @@
+
+
+.weather__title{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.weather{
+  height: calc(100% - 70px);
+  text-align: center;
+  width: 30%;
+  margin: 0 auto;
+  &__report{
+    background-color: #00adff4a;
+    margin-bottom: 1%;
+  }
+}
