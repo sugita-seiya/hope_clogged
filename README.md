@@ -1,7 +1,9 @@
 # hope_cloggmwed(アプリ名)
 - 文書管理システム
-- https://github.com/sugita-seiya/hope_clogged.git
-- http://18.178.151.218
+- GitHub
+https://github.com/sugita-seiya/hope_clogged.git
+- アプリURL 
+http://18.178.151.218
 
 
 ## Test Account(テストアカウント)
