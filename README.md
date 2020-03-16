@@ -1,8 +1,8 @@
 # hope_cloggmwed(アプリ名)
 - 文書管理システム
-- GitHub
+- GitHub</br>
 https://github.com/sugita-seiya/hope_clogged.git
-- アプリURL 
+- アプリURL</br>
 http://18.178.151.218
 
 
