@@ -17,11 +17,14 @@
           勤務表
         <% end%>
       </div>
-      <div class = "top__contents--btn">
-        <%= link_to weather_index_path, class:"link__btn" do%>
-          天気情報
-        <% end%>
-      </div>
+      <% content_for(:body_attributes) do %>
+        data-turbolinks="false"
+        <div class = "top__contents--btn">
+          <%= link_to weather_index_path, class:"link__btn" do%>
+            天気情報
+          <% end%>
+        </div>
+      <% end %>
     </div>
   </div>
   <%= render partial: "side" %>
