@@ -32,8 +32,6 @@
         </div>
       </div>
     </header>
-    <div <% if content_for?(:body_attributes) %><%= yield(:body_attributes) %><% end %>>
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>
