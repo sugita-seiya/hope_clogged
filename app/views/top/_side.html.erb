@@ -3,8 +3,9 @@
       <% if user_signed_in? && current_user.groups.length > 0 %>
         <div class = "header__right--btn login__name">
           <%= current_user.name %>さんのページ <br>
+            
               <%  current_user.groups.each do |g|%>
-                部署: <%=g.name%>
+                部署: <%=g.name%> <br>
               <%end%>
         </div>
         <%= link_to  new_group_report_path(@group), class:"header__right--btn" do%>

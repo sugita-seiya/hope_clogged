@@ -21,7 +21,7 @@
           <div class= "header__user">
             <%if user_signed_in? && current_user.groups.length > 0 %>
               <% current_user.groups.each do |g|%>
-                部署: <%=g.name%>
+                部署: <%=g.name%><br>
               <%end%>
             <% elsif user_signed_in? && current_user.groups.length == 0 %>
               <p>部署を登録してください。</p>
