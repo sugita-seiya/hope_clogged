@@ -2,54 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
+body {
   background-color: #f7f7f7;
-  .header{
+  .header {
     display: flex;
     justify-content: space-between;
     // position: fixed;
-    top:0;
+    top: 0;
     height: 70px;
     width: 100%;
     background-color: #d4b4b4c4;
-    &__top{
+    &__top {
       font-size: 35px;
       padding: 7px 10%;
-      a{
+      a {
         text-decoration: none;
         color: black;
       }
     }
-    &__title{
+    &__title {
       padding-left: 112px;
       font-size: 30px;
       line-height: 56px;
       text-align: center;
       padding-top: 4px;
-      a{
+      a {
         text-decoration: none;
         color: black;
       }
     }
-    &__user{
-      font-size: 19px;
-      padding: 17px 15%;
-      a{
+    &__user {
+      font-size: 14px;
+      padding: 12px 15%;
+      a {
         text-decoration: none;
         color: black;
       }
     }
   }
-  .main{
+  .main {
     width: 100%;
-    background-color:#f7f7f7;
+    background-color: #f7f7f7;
     overflow: scroll;
     height: calc(100vh - 70px);
     display: flex;
     justify-content: space-between;
     margin: 15px;
-    .top{
-      background-color:white;
+    .top {
+      background-color: white;
       width: 60%;
       height: calc(100vh - 115px);
       text-align: center;
@@ -57,17 +57,17 @@ body{
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      &__contents{
+      &__contents {
         padding: 30px;
         box-shadow: 0 0 0px rgba(41, 41, 41, 0.2);
         box-sizing: border-box;
         width: 100%;
         display: flex;
         flex-direction: column;
-        &--btn{
+        &--btn {
           padding-bottom: 123px;
           height: 30px;
-          .link__btn{
+          .link__btn {
             width: 100%;
             padding: 34px 29%;
             background-color: khaki;
@@ -82,5 +82,3 @@ body{
     }
   }
 }
-
-
