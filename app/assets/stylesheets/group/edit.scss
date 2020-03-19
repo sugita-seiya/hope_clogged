@@ -2,31 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content{
-  &__title{
+.content {
+  &__title {
     padding-top: 7%;
   }
-  .form__group{
+  .form__group {
     width: 85%;
     height: 100%;
     margin: 0 auto;
     padding-top: 30px;
-    .form__group--tag{
+    .form__group--tag {
       padding: 6% 0 4% 32%;
-      .form__group--name{
+      .form__group--name {
         display: flex;
         padding-bottom: 4%;
       }
-      .input{
+      .input {
         display: flex;
         padding: 5% 5% 0 5%;
         font-size: 29px;
-        span{
+        select {
+          font-size: medium;
+          width: 41%;
+        }
+        span {
           font-size: 29px;
           padding-right: 9%;
         }
       }
-      .input__group{
+      .input__group {
         width: 30%;
         padding-top: 5%;
         border-bottom: 1px solid #ddd;
