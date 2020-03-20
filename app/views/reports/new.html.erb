@@ -5,7 +5,7 @@
     </div>
 
     <%= form_with(model: [@group,@report],class: :form) do |form| %>
-      <%= form.date_field :date, value: (Time.now.strftime("%Y-%m-%d"))%>
+      <%= form.date_field :date, max: "2030-1-1", min:"1950-1-1",value: (Time.now.strftime("%Y-%m-%d"))%>
       <%= form.text_area :text, placeholder: :日報記事内容, class: :form__text , content__titles: "10", id: "content" %>
       <%= form.submit '記事送信', class: :form__btn %>
     <% end %>
