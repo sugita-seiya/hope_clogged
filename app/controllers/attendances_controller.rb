@@ -1,6 +1,5 @@
 class AttendancesController < ApplicationController
   require "date"
-  require "turbolinks"
   
   def index
     if params[:search] == "次月" then
