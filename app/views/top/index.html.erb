@@ -4,11 +4,11 @@
       <div class = "top__contents--btn">
         <% if  current_user.groups.ids.blank?%>
           <%= link_to new_group_path , class:"link__btn" do%>
-            部署登録
+            登&emsp;録
           <% end %>
         <% else %>
           <%= link_to top_group_reports_path(@group), class:"link__btn" do%>
-            日報
+            日&emsp;報
           <% end%>
         <% end %>
       </div>
@@ -18,8 +18,8 @@
         <% end%>
       </div>
       <div class = "top__contents--btn">
-        <%= link_to weather_index_path, class:"link__btn",data: {"turbolinks" => false} do%>
-          天気情報
+        <%= link_to weather_index_path, class:"link__btn size",data: {"turbolinks" => false} do%>
+          天&emsp;気
         <% end%>
       </div>
     </div>
