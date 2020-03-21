@@ -1,32 +1,31 @@
-.content{
-  padding: 10px;
+.content {
   border-bottom: 1px solid #e8e8e8;
   display: flex;
-  .reports{
+  .reports {
     padding: 10px;
     border-bottom: 1px solid #e8e8e8;
     display: flex;
-    &__left{
+    &__left {
       margin: 8px -11px 0px 0px;
       padding-right: 34%;
       width: 35%;
-      a{
+      a {
         text-decoration: none;
         color: black;
         font-size: 24px;
       }
     }
-    &__right{
+    &__right {
       display: flex;
-      &__top{
+      &__top {
         padding-top: 13%;
         padding-right: 10px;
-        &--title{
+        &--title {
           text-decoration: none;
           color: #000000;
         }
       }
-      &__name{
+      &__name {
         font-size: 15px;
         color: #999;
         padding-top: 12%;
