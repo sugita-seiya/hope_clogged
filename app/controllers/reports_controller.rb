@@ -52,7 +52,7 @@ class ReportsController < ApplicationController
   end
 
   def search
-    @reports = Report.search(params[:keyword])
+    @reports = Report.search(params[:keyword]).order("created_at desc")
   end
 
   private
