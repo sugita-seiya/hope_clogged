@@ -51,6 +51,10 @@ class ReportsController < ApplicationController
     redirect_to group_reports_path(current_user.groups.ids)
   end
 
+  def search
+    @reports = Report.search(params[:keyword])
+  end
+
   private
   def report_params
     params.require(:report).permit(:date, :text).merge(user_id: current_user.id)
