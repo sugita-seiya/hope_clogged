@@ -1,17 +1,24 @@
 <div class="main">
   <div class="top">
     <div class="top__contents">
-      <div class = "top__contents--btn">
-        <% if  current_user.groups.ids.blank?%>
+      <% if  current_user.groups.ids.blank?%>
+        <div class = "top__contents--btn">
           <%= link_to new_group_path , class:"link__btn" do%>
             登&emsp;録
           <% end %>
-        <% else %>
+        </div>
+      <% else %>
+        <div class = "top__contents--btn">
           <%= link_to top_group_reports_path(@group), class:"link__btn" do%>
             日&emsp;報
           <% end%>
-        <% end %>
-      </div>
+        </div>
+        <div class = "top__contents--btn">
+          <%= link_to search_group_reports_path(@group), class:"link__btn size" do%>
+            検&emsp;索
+          <% end %>
+        </div>
+      <% end %>
       <div class = "top__contents--btn">
         <%= link_to edit_attendance_path(@attendance), class:"link__btn" do%>
           勤務表
@@ -22,11 +29,6 @@
           天&emsp;気
         <% end%>
       </div>
-      <%# <div class = "top__contents--btn">
-        <%= link_to search_group_reports_path(@group), class:"link__btn size" do%>
-          <%# 検&emsp;索 %>
-        <%# <% end%>
-      <%# </div> %>
     </div>
   </div>
   <%= render partial: "side" %>
