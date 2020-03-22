@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :reports do
       collection do
         get 'top'
+        get 'search'
       end
     end
   end
