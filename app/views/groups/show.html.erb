@@ -12,11 +12,17 @@
         <div class = "input">
           <p>所属メンバー :</p>
         </div>
-        <%  @group_users.each do |u| %>
+
+        <% if @group.users.empty? %>
           <div class= "input__group">
-            <input name= "group[user_ids][]" type="hidden" value=<%= u.user_id%> style="user-select: auto;">
-            <p class="chat-group-user__name" style="user-select: auto;"> <%= current_user.name %></p>
+            <p class="chat-group-user__name">メンバーがいません.</p>
           </div>
+        <% else %>
+          <%  @group.users.each do |user| %>
+            <div class= "input__group">
+              <p class="chat-group-user__name"> <%= user.name  %></p>
+            </div>
+          <% end %>
         <% end %>
       </div>
       <div class= "input">
