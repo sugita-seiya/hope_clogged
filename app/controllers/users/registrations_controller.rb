@@ -20,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       thisMonthLastDay = today.end_of_month.mday
       (1..thisMonthLastDay).each do |day|
         Attendance.create(
-          user_id: current_user.id,
+          user_id: @user.id,
           year: thisYear,
           month: thisMonth,
           day: day,
@@ -33,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       nextMonthLastDay = nextMonthDay.end_of_month.mday
       (1..nextMonthLastDay).each do |day|
         Attendance.create(
-          user_id: current_user.id,
+          user_id: @user.id,
           year: nextYear,
           month: nextMonth,
           day: day,
