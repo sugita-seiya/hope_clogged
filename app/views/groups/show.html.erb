@@ -12,10 +12,12 @@
         <div class = "input">
           <p>所属メンバー :</p>
         </div>
-        <div class= "input__group">
-          <input name= "group[user_ids][]" type="hidden" value=<%= current_user.id%> style="user-select: auto;">
-          <p class="chat-group-user__name" style="user-select: auto;"> <%= current_user.name %></p>
-        </div>
+        <%  @group_users.each do |u| %>
+          <div class= "input__group">
+            <input name= "group[user_ids][]" type="hidden" value=<%= u.user_id%> style="user-select: auto;">
+            <p class="chat-group-user__name" style="user-select: auto;"> <%= current_user.name %></p>
+          </div>
+        <% end %>
       </div>
       <div class= "input">
         <span>担当部署:</span>
