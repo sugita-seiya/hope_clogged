@@ -61,9 +61,8 @@ class ReportsController < ApplicationController
   end
 
   def set_group
-    # @group = Group.find(current_user.groups.ids.first)
-    # @group = Group.find_by(params[:group_ids])
-    @group = Group.find(params[:group_id])
+    # @group = Group.find_by(params[:group_id])
+    @group = Group.find(current_user.groups.ids.first)
   end
 
 end

@@ -7,23 +7,19 @@ class GroupsController < ApplicationController
 
   def new
     @group_users = GroupUser.new
-
-    # 現在ログイン中のユーザーを、新規作成したグループに追加。
   end
 
   def create
-    GroupUser.create(group_id:params[:group_id], user_id:params[:user_ids])
-    # @group_users = GroupUser.new(group_params)
-    # if @group_users.save!
-    #   redirect_to root_path, notice: 'グループを作成しました'
-    # else
-    #   render :new
-    # end
-    redirect_to root_path, notice: 'グループを作成しました'
+    begin
+      @group_users = GroupUser.create(group_id:params[:group_id], user_id:params[:user_ids])
+      redirect_to root_path, notice: 'グループを作成しました'
+    rescue
+      render :new
+    end
   end
 
   def edit
-    @group = Group.find(params[:id])
+    @group_users = GroupUser.find_by(params[:id])
   end
 
   def update
@@ -48,10 +44,9 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:name, { :user_ids => [] })
-    #  params.require(:group).permit(:name, user_ids: [] )
   end
 
   def set_group
-    @group = Group.find_by(params[:id])
+    @group_users = GroupUser.find_by(params[:id])
   end
 end

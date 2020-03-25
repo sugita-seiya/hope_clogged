@@ -3,8 +3,8 @@
     部署の詳細
   </div>
   <div class="postManage">
-    <%= link_to "登録", new_group_path(@group), class: "postManage__edit" %>
-    <%= link_to "編集", edit_group_path(@group,@user), class: "postManage__edit" %>
+    <%# <%= link_to "登録", new_group_path(@group), class: "postManage__edit" %>
+    <%# <%= link_to "編集", edit_group_path(@group_users), class: "postManage__edit" %>
   </div>
 
   <div class= "form__group">
@@ -25,7 +25,7 @@
         <% else %>
           <%  @group.users.each do |user| %>
             <div class= "input__group">
-              <p class="chat-group-user__name"> <%= user.name  %></p>
+              <li class="chat-group-user__name"> <%= user.name  %></li>
             </div>
           <% end %>
         <% end %>

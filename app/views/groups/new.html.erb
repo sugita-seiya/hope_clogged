@@ -1,26 +1,29 @@
 <div class = "content">
   <div class = "content__title">
-    下記の内容を記載して部署登録してください。
+    部署番号を送信して登録してください。
   </div>
   <div class = "groups__name">
     11.工務課
     12.品質管理課
+    13.安全管理課
+    14.品質安全課
+    15.設備保全課
   </div>
-  
+
   <%= form_with url: groups_path, html: { method: :post } ,class: :form__group, local: true do |form| %>
     <div class= "form__group--tag">
       <div class= "form__group--name">
         <div class = "input">
-          <p>所属メンバー :</p>
+          <p>氏名 :</p>
         </div>
-        <div class= "input__group">
+        <div class= "new__name">
           <input name= "user_ids" type="hidden" value=<%= current_user.id%>>
           <p class="chat-group-user__name"> <%= current_user.name %></p>
         </div>
       </div>
       <div class= "input">
-        <span>担当部署</span>
-        <input name="group_id" type="integer">
+        <span>担当部署 : </span>
+        <input name="group_id" type="integer", placeholder= "番号入力">
       </div>
     </div>
     <%= form.submit 'データ送信', class: :form__btn %>
