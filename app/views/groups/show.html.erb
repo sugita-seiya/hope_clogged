@@ -3,17 +3,22 @@
     部署の詳細
   </div>
   <div class="postManage">
-    <%= link_to "編集", edit_group_path(@group.id), class: "postManage__edit" %>
+    <%= link_to "登録", new_group_path(@group), class: "postManage__edit" %>
+    <%= link_to "編集", edit_group_path(@group,@user), class: "postManage__edit" %>
   </div>
 
   <div class= "form__group">
     <div class= "form__group--tag">
+      <div class= "input">
+        <span>担当部署:</span>
+          <%= @group.name%>
+      </div>
       <div class= "form__group--name">
         <div class = "input">
           <p>所属メンバー :</p>
         </div>
-
-        <% if @group.users.empty? %>
+        <div class= "input__member">
+          <% if @group.users.empty? %>
           <div class= "input__group">
             <p class="chat-group-user__name">メンバーがいません.</p>
           </div>
@@ -24,10 +29,7 @@
             </div>
           <% end %>
         <% end %>
-      </div>
-      <div class= "input">
-        <span>担当部署:</span>
-          <%= @group.name%>
+        </div>
       </div>
     </div>
   </div>

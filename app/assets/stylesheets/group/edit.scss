@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .content {
+  overflow: scroll;
   &__title {
     padding-top: 7%;
   }
@@ -30,11 +31,14 @@
           padding-right: 9%;
         }
       }
-      .input__group {
-        width: 30%;
+      .input__member {
         padding-top: 5%;
-        border-bottom: 1px solid #ddd;
-        font-size: 29px;
+        .input__group {
+          width: 100%;
+          padding-top: 5%;
+          border-bottom: 1px solid blue;
+          font-size: 100%;
+        }
       }
     }
   }

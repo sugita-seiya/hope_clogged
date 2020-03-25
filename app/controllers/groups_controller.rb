@@ -6,18 +6,20 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @group_users = GroupUser.new
+
     # 現在ログイン中のユーザーを、新規作成したグループに追加。
-    @group.users << current_user
   end
 
   def create
-    @group = Group.new(group_params)
-    if @group.save
-      redirect_to root_path, notice: 'グループを作成しました'
-    else
-      render :new
-    end
+    GroupUser.create(group_id:params[:group_id], user_id:params[:user_ids])
+    # @group_users = GroupUser.new(group_params)
+    # if @group_users.save!
+    #   redirect_to root_path, notice: 'グループを作成しました'
+    # else
+    #   render :new
+    # end
+    redirect_to root_path, notice: 'グループを作成しました'
   end
 
   def edit
@@ -25,9 +27,11 @@ class GroupsController < ApplicationController
   end
 
   def update
-    group = Group.find(params[:id])
-    group.update(group_params)
-    redirect_to top_group_reports_path(group.id)
+    if @group.update(group_params)
+      redirect_to top_group_reports_path(@group)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -48,6 +52,6 @@ class GroupsController < ApplicationController
   end
 
   def set_group
-    @group = Group.find_by(params[:ids])
+    @group = Group.find_by(params[:id])
   end
 end
