@@ -3,23 +3,33 @@
     部署の詳細
   </div>
   <div class="postManage">
-    <%= link_to "編集", edit_group_path(@group.id), class: "postManage__edit" %>
+    <%# <%= link_to "登録", new_group_path(@group), class: "postManage__edit" %>
+    <%# <%= link_to "編集", edit_group_path(@group_users), class: "postManage__edit" %>
   </div>
 
   <div class= "form__group">
     <div class= "form__group--tag">
+      <div class= "input">
+        <span>担当部署:</span>
+          <%= @group.name%>
+      </div>
       <div class= "form__group--name">
         <div class = "input">
           <p>所属メンバー :</p>
         </div>
-        <div class= "input__group">
-          <input name= "group[user_ids][]" type="hidden" value=<%= current_user.id%> style="user-select: auto;">
-          <p class="chat-group-user__name" style="user-select: auto;"> <%= current_user.name %></p>
+        <div class= "input__member">
+          <% if @group.users.empty? %>
+          <div class= "input__group">
+            <p class="chat-group-user__name">メンバーがいません.</p>
+          </div>
+        <% else %>
+          <%  @group.users.each do |user| %>
+            <div class= "input__group">
+              <li class="chat-group-user__name"> <%= user.name  %></li>
+            </div>
+          <% end %>
+        <% end %>
         </div>
-      </div>
-      <div class= "input">
-        <span>担当部署:</span>
-          <%= @group.name%>
       </div>
     </div>
   </div>

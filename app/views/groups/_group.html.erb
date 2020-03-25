@@ -1,12 +1,13 @@
 <div class = "reports">
     <div class="reports__left">
       <%= link_to group_path(group),class: "content__date" do%>
-        <%= group.name%>
+        <%= group.id%>, <%= group.name%>
       <% end %>
     </div>
     <div class="reports__right">
       <div class="reports__right__top">
-        <%= link_to "編集", edit_group_path(group.id), class: "postManage__edit" %>
+        <%# <%= link_to "登録", new_group_path(@group), class: "postManage__edit" %>
+        <%# <%= link_to "編集", edit_group_path(@group_users), class: "postManage__edit" %>
       </div>
       <div class="reports__right__name">
       </div>

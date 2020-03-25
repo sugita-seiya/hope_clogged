@@ -5,29 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require "date"
 
-today = Date.today
-thisYear = today.year
-thisMonth = today.month
-thisMonthLastDay = today.end_of_month.mday
-
-user_list = User.all
-user_list.each do |user|
-# (1..user_list.length).each do |user|
-  #今月の日にち分データを作成
-  (1..thisMonthLastDay).each do |day|
-    # strMonthly = today.year.to_s + "/" + today.month.to_s + "/" + day.to_s
-    # monthly = Date.parse(strMonthly)
-    Attendance.create!(
-      user_id: user.id,
-      # days: monthly,
-      year: thisYear,
-      month: thisMonth,
-      day: day,
-      remarks: ''
-    )
-  end
-end
-
-
+Group.create(name:"製造課")
+Group.create(name:"工務課")
+Group.create(name:"安全管理課")
+Group.create(name:"品質安全課")
+Group.create(name:"設備保全課")
