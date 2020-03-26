@@ -1,13 +1,6 @@
 <div class = "content">
   <div class = "content__title">
-    部署番号を送信して登録してください。
-  </div>
-  <div class = "groups__name">
-    6.製造課
-    7.工務課
-    8.安全管理課
-    9.品質安全課
-    10.設備保全課
+    部署を選択して登録してください。
   </div>
 
   <%= form_with url: groups_path, html: { method: :post } ,class: :form__group, local: true do |form| %>
@@ -23,7 +16,14 @@
       </div>
       <div class= "input">
         <span>担当部署 : </span>
-        <input name="group_id" type="integer", placeholder= "番号入力">
+          <%= form.select name= "group_id", class: :group__register  do %>
+            <option value= "">------------</option>
+            <option value="6">製造課</option>
+            <option value="7">工務課</option>
+            <option value="8">安全管理課</option>
+            <option value="9">品質安全課</option>
+            <option value="10">設備保全課</option>
+          <% end %>
       </div>
     </div>
     <%= form.submit 'データ送信', class: :form__btn %>
