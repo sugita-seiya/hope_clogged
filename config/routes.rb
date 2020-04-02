@@ -3,8 +3,6 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations'
    }
   root to: "top#index"
-  get 'attendances/index'
-  get 'attendances/edit'
   resources :groups do
     resources :reports do
       collection do
