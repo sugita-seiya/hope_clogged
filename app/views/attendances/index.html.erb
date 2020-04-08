@@ -7,6 +7,7 @@
     <th class="list__headers__header">退勤</th>
     <th class="list__headers__header">備考</th>
   </tr>
+
   <% @attendance_list.each do |attend| %>
     <tr class="list__contents">
       <td><%= attend.year %>年<%= attend.month %>月<%= attend.day %>日</td>
@@ -24,6 +25,7 @@
     </tr>
   <% end %>
 </table>
+
 <%= form_tag(attendances_path,:method => 'get') do %>
   <%= hidden_field_tag 'year', "#{@year}"%>
   <%= hidden_field_tag 'month', "#{@month}"%>
