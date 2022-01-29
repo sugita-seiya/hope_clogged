@@ -12,27 +12,7 @@
 - capistrano による AWS EC2 への自動デプロイ
   ![result](https://user-images.githubusercontent.com/58096254/76675454-fda78680-65fc-11ea-8db6-e976726bc230.gif)
   ![スクリーンショット 2020-03-15 19 50 54](https://user-images.githubusercontent.com/58096254/76700007-56a71580-66f6-11ea-92ae-260703071126.png)
-
-## technology(使用技術)
-
-- Ruby 2.5.1
-- Rails 5.2.4
-- javaScript
-- jQuery
-- github
-- AWS
-
-## poin (こだわりポイント)
-
-- 社員が部署に所属しており、投稿レポートが部署と紐づいている事。
-- 出社ボタンと退社ボタンで時間を取得出来て、勤務表にも反映される事。
-- 5 日分の天気情報を取得したので、素早く天気を確認する事が出来る。
-
-## Future Implementation(今後の実装予定)
-
-- 勤務表を上司に送信が出来る様にする。
-- 上司に権限を与えて、部下全員の勤務表一覧を見る事が出来る。
-
+  
 ## users テーブル
 
 | Column   | Type   | Options     |
